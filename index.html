@@ -83,6 +83,41 @@
       padding: 0 24px; 
     }
 
+    /* Home Button Styles - Added */
+    .home-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      width: 50px;
+      height: 50px;
+      background: rgba(26, 31, 58, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .home-btn:hover {
+      background: var(--accent-primary);
+      color: white;
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .home-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
     /* --- PROFILE SECTION --- */
     .profile-section {
       text-align: center;
@@ -531,7 +566,8 @@
 
       .sticky-nav,
       #scrollTop,
-      .hero-actions {
+      .hero-actions,
+      .home-btn { /* Hide home button on print */
         display: none;
       }
 
@@ -542,6 +578,12 @@
   </style>
 </head>
 <body>
+
+  <a href="https://alpustundag.github.io/" class="home-btn" aria-label="Home">
+    <svg viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a>
 
   <header class="profile-section">
     <div class="container">
